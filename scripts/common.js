@@ -5,13 +5,29 @@ $(window).on('orientationchange', function ()
 });
 /* page refresh on orientation change === END */
 
+/* show-hide video === start */
+$(function($) 
+{
+    if($(window).width() > 1003)
+    {
+        $("#videopopup").show();
+        $(".main").hide();
+    }
+    else 
+    {
+        $("#videopopup").hide();
+        $(".main").show();
+    }
+});
+/* show-hide  video === start */
 
-/* onLoad === start */
+
 $(window).on('load', function() 
 {
-     
+    $("#pageloader").fadeOut(500); 
+     setTimeout(function() { $("#videopopup").fadeOut(500); $(".main").show();}, 14000);
 });
-/* onLoad === end */
+/* hide video === end */
 
 
  
