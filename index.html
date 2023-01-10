@@ -7,7 +7,7 @@
 
 	<title>Doritos</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/main.min.css" />
     
 </head>
@@ -69,13 +69,13 @@
     <!-- navigation start -->
     <section class="navigation">
         <div class="nav_insider">
-            <div class="itemslider">
-                <div class="itemslide">Home</div>
-                <div class="itemslide">Videos </div>
-                <div class="itemslide">Playlists </div>
-                <div class="itemslide">Community </div>
-                <div class="itemslide">Channels </div>
-                <div class="itemslide">About</div>
+            <div class="navslider">
+                <div class="navslide active" id="nav_home" onclick="navselection(this.id);">Home</div>
+                <div class="navslide" id="nav_videos" onclick="navselection(this.id);">Videos </div>
+                <div class="navslide" id="nav_playlists" onclick="navselection(this.id);">Playlists </div>
+                <div class="navslide" id="nav_community" onclick="navselection(this.id);">Community </div>
+                <div class="navslide" id="nav_channels" onclick="navselection(this.id);">Channels </div>
+                <div class="navslide" id="nav_about" onclick="navselection(this.id);">About</div>
             </div>
         </div>
     </section>
@@ -158,6 +158,7 @@
 <script src="scripts/slick.min.js"></script>
 <script src="scripts/common.js"></script>
 
+ 
 </body>
 </html>
  

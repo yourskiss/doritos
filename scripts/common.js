@@ -52,21 +52,28 @@ function showhidecautionpopup(val)
 }
 /* show-hide caution === end */
 
-$(".itemslider.slick-slider .slick-slide").click(function()
+/* slide selection onclick === start */
+function navselection(val)
 {
-    debugger;
-    console.log("hiiii");
-    slideIndex = $(this).index();
-    $('.itemslider.slick-slider').slick('slickGoTo', parseInt(slideIndex));
-    console.log(slideIndex);
+    $(".navslider .navslide").removeClass("active");
+    $("#"+val).addClass("active");
+}
+/* slide selection onclick === end */
+
+/* slide on click next === start */
+$('.navslider').on('afterChange', function() { 
+    var dataId = $('.slick-current').find(".navslide").attr("id");  
+    console.log(dataId);
+    $("#"+dataId).trigger("click");
 });
+/* slide on click next === start */
 
 // social slider   === start 
 $(function($) 
 {
-    if($(".itemslider").length > 0)
+    if($(".navslider").length > 0)
     {
-        $('.itemslider').slick({
+        $('.navslider').slick({
             slidesToShow:6,
             slidesToScroll: 1,
             dots: false,
@@ -75,36 +82,42 @@ $(function($)
             autoplaySpeed: 3000,
             infinite: false,
             adaptiveHeight: false,
-            variableWidth: true,
+            variableWidth: false,
             centerMode: false,
             centerPadding: '0',
             initialSlide:0,
             responsive:
-            [
-                /* 
+            [ 
                 {
                      breakpoint: 99999,
                      settings: "unslick"
                 },
-                */
                 {
-                    breakpoint: 667,
-                    settings: { variableWidth: false, slidesToShow:4 }
+                    breakpoint: 1003,
+                    settings: { slidesToShow:5 }
+                },
+                {
+                    breakpoint: 767,
+                    settings: { slidesToShow:4 }
                 },
                 {
                     breakpoint: 599,
-                    settings: { variableWidth: false, slidesToShow:3 }
+                    settings: {  slidesToShow:3 }
                 },
                 {
                     breakpoint: 479,
-                    settings: { variableWidth: false, slidesToShow:2 }
+                    settings: { slidesToShow:2 }
                 },
                 {
                     breakpoint: 300,
-                    settings: { variableWidth: false, slidesToShow:1  }
+                    settings: { slidesToShow:1  }
                 }
             ]
         });
     }
 });
 
+ 
+
+
+ 
