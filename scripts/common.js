@@ -52,6 +52,14 @@ function showhidecautionpopup(val)
 }
 /* show-hide caution === end */
 
+$(".itemslider.slick-slider .slick-slide").click(function()
+{
+    debugger;
+    console.log("hiiii");
+    slideIndex = $(this).index();
+    $('.itemslider.slick-slider').slick('slickGoTo', parseInt(slideIndex));
+    console.log(slideIndex);
+});
 
 // social slider   === start 
 $(function($) 
@@ -81,21 +89,22 @@ $(function($)
                 */
                 {
                     breakpoint: 667,
-                    settings: {  slidesToShow:5 }
+                    settings: { variableWidth: false, slidesToShow:4 }
                 },
                 {
                     breakpoint: 599,
-                    settings: {  slidesToShow:4 }
+                    settings: { variableWidth: false, slidesToShow:3 }
                 },
                 {
                     breakpoint: 479,
-                    settings: {  slidesToShow:3 }
+                    settings: { variableWidth: false, slidesToShow:2 }
                 },
                 {
-                    breakpoint: 367,
-                    settings: { slidesToShow:2  }
+                    breakpoint: 300,
+                    settings: { variableWidth: false, slidesToShow:1  }
                 }
             ]
         });
     }
 });
+
